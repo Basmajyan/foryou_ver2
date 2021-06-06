@@ -1,0 +1,33 @@
+{%extends 'layout.html'%}
+{%load static%}
+{%block title%}<title>Add Post</title>{%endblock%}
+{%block content%}
+{%if form.errors%}
+    <div class="regerros"><p class="nonerrors">{{form.errors}}</p></div>
+{%endif%}
+<div class="content">
+    <p class="newuser">Add New Vide</p>
+    <form class="AddInputForm" enctype="multipart/form-data" method="POST">
+        {%csrf_token%}
+        {%comment%}
+        {%endcomment%}
+        <div class="AddInputName">
+            <div><p>Youtube vido url</p></div>
+            <div>{{form.url}}</div>
+        </div>
+        <div class="AddInputName">
+            <div><p>Heading</p></div>
+            <div>{{form.heading}}</div>
+        </div>
+        <div class="AddInputName">
+            <div><p>Instagram</p></div>
+            <div>{{form.instagram}}</div>
+        </div>
+        <!-- {{form.as_p}} -->
+        <br><br>
+        <div class="AddInputName AddInputNameBut"><button class="regsubmut" type="submit">Add</button></div>
+        </form>
+</div>
+    
+
+{%endblock%}

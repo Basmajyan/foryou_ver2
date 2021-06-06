@@ -1,0 +1,35 @@
+{%extends 'layout.html'%}
+{%block title%}<title>Register</title>{%endblock%}
+
+{%block content%}
+{%if user.errors%}
+    <div class="regerros">
+        <p>{{user.errors}}</p>
+    </div>
+{%endif%}
+<div class="content">
+    <p class="newuser">Register</p> 
+    <div class="regform">
+        <div class="regtext">
+            <p>NickName</p>
+            <p>Email</p>
+            <p>Password</p>
+            <p>Confirm Password</p>
+        </div>
+        <div class="reginput">
+            <form class="UserRegForm" method="POST">
+                {%csrf_token%}
+                {{user.username}}<br><br>
+                {{user.email}}<br><br>
+                {{user.password1}}<br><br>
+                {{user.password2}}<br><br>
+
+                <br><br>
+                <button class="regsubmut" type="submit">Register</button>
+        </div>
+    </div>
+             </form>
+</div>
+
+
+{%endblock%}

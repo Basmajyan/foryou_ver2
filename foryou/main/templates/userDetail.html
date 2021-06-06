@@ -1,0 +1,71 @@
+{%extends 'layout.html'%}
+{%load static%}
+{%block title%}<title>{{user.username}}'s Profil</title>{%endblock%}
+
+{%block content%}
+<!-- ----------------------------КОЛХОЗ--------------------------- -->
+<!-- <div class="detailfigurka"></div> -->
+<!-- --------------------------КОЛХОЗ-ЭНД------------------------- -->
+<div class="FonFraw"></div>
+
+<div class="backcol UserView">
+    <p class="tagText">Username: <a class="author tagText">{{User.username}}</a></p>
+    {%if User.email%}
+        <p style="user-select: text;" class="email shadText"><i style="color: gray;">Email: </i> {{User.email}} </p>
+    {%endif%}
+    {%if User.last_login %}
+        <p class="shadText fs15"><i style="color: gray;">Authorized: </i>{{User.last_login}} </p>
+    {%endif%}
+<p class="shadText fs15"><i style="color: gray;">Reg Date: </i>{{User.date_joined}} </p>
+</div>
+{%if request.user.username == User.username%}
+    <div  class="ContAddPost">
+            <p class="creattext">Add new post</p>
+            <div class="ToLogOrReg">
+                <a href="{%url 'AddPost'%}"><button class="regsubmut" type="submit">Add post</button></a>
+            </div>
+        </div>
+{%endif%}
+
+{%if Post%}
+    <div class="content">
+        <p class="newuser">{{User.username}}'s Posts</p>
+        <div class="mosaic">
+            {%for i in Post%}
+            <div class="user">
+                <div class="NameAndInst">
+                    <p class="username">
+                        <a class="username" href="/users/{{i.authors_id}}/">{{i.author}} </a>
+                    </p>
+                        {%if i.instagram%}
+                    <a class="instlink" target="_blank"
+                    href="https://www.instagram.com/{{i.instagram}}"><i style="color: gray;">Instagram</i> @{{i.instagram}}</a><br>
+                    <hr>
+                    {%endif%}
+                </div>
+                {%if i.image%}
+                    <p class="instlink">{{i.heading}}</p>
+                    <div class="img-wrapper">
+                            <a href="{% url 'PostView' i.id %}"><img class="postimage2" width="100%" id="" src="{{i.image.url}}" alt="{{i.username}}'s image"></a>
+                        </div>
+                        <!-- <div class="postimage" style="background-image: url({{i.image.url}})" ></div> -->
+                {%else%}
+                    <p class="instlink" style="text-align:center;color:red;">Image is not a found</p>
+                {%endif%}
+            </div>
+            {%endfor%}
+            
+        </div>
+    {%else%}
+        {%if not request.user.username == User.username%}
+        <div class="content">
+            <p class="newuser">{{User.username}} hasn't added any posts</p>
+            <p class="UserNotFound">
+                ¯\_(ツ)_/¯
+            </p>
+        </div>
+        {%endif%}
+    </div>   
+{%endif%}
+
+{%endblock%}

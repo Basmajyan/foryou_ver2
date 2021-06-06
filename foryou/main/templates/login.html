@@ -1,0 +1,29 @@
+{%extends 'layout.html'%}
+{%load static%}
+{%block title%}<title>Login</title>{%endblock%}
+{%block content%}
+{%if form.non_field_errors%}
+    <div class="regerros"><p class="nonerrors">{{form.non_field_errors }}</p></div>
+{%endif%}
+<div class="content">
+    <p class="newuser">login</p>
+    <div class="regform">
+        <div class="regtext">
+            <p>NickName</p>
+            <p>Password</p>
+        </div>
+        <div class="reginput">
+            <form class="UserRegForm" method="POST">
+                {%csrf_token%}
+                {% comment%}
+                {%endcomment %}
+                {{form.username}}<br><br>
+                {{form.password}}<br><br>
+                <br><br>
+
+                <button class="regsubmut" type="submit">LogIn</button>
+        </div>
+    </div>
+            </form>
+</div>
+{%endblock%}

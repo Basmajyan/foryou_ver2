@@ -1,0 +1,55 @@
+{%extends 'layout.html'%}
+{%load static%}
+{%block title%}<title>{{object.author}}'s Post</title>{%endblock%}
+
+{%block content%}
+<!-- ----------------------------КОЛХОЗ--------------------------- -->
+<!-- <div class="detailfigurka"></div> -->
+<!-- --------------------------КОЛХОЗ-ЭНД------------------------- -->
+<div class="FonFraw"></div>
+<div class="detailPage">
+    <div class="detail">
+        <div>
+             {%if object.image%}
+                <img onclick="Zoom()" src="{{object.image.url}}" class="ImageDetailDiv">
+            {%endif%}
+            {%if object.url and object.type == 'video'%}
+                <iframe class='DetailVido' src="https://www.youtube.com/embed/{{object.url}}?autoplay=1&controls=2" autoplay title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>                
+            {%endif%}
+    
+        </div>
+    </div>
+    <div class="detail detCen"> 
+        <div class="detail">
+            <div class="backcol">
+                <p class="tagText">Author: <a class="author tagText"><a class="username" href="/users/{{object.authors_id}}/">{{object.author}}</a></p>
+                <p class="tagText">Description:</p>
+                <p class="heading detailP">{{object.heading}}</p><br>
+                {%if object.instagram%}
+                    <p class="heading detailP">
+                        <a class="instlink" target="_blank"
+                        href="https://www.instagram.com/{{object.instagram}}"><i style="color: gray;">Instagram</i> @{{object.instagram}}</a>
+                    </p>
+                    {%endif%}
+                {% if request.user == post.author%}
+                    {%if post.type == 'video'%}
+                    <p><a href="videoupdate/" class="tagText open">Update</a>|<a href="delete/" class="tagText open">Delete</a></p>
+                    {%else%}
+                    <p><a href="update/" class="tagText open">Update</a>|<a href="delete/" class="tagText open">Delete</a></p>
+                    {%endif%}
+                {%endif%}
+            </div>
+            {%if object.image%}
+                <p ><a target="_blank" href="{{object.image.url}}" class="tagText open">Open original file</a></p>
+            {%endif%}
+
+        </div>
+    </div>
+</div>
+<div id="ZoomImage">
+    {%if object.image%}
+        <img src="{{object.image.url}}" id="Zoom">
+    {%endif%}
+</div>
+<div onclick="outZoom()" id="close"></div>
+{%endblock%}

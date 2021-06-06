@@ -1,0 +1,68 @@
+{%extends 'layout.html'%}
+{%load static%}
+{%block title%}<title>Users</title>{%endblock%}
+
+{%block content%}
+<!-- ----------------------------КОЛХОЗ--------------------------- -->
+<!-- <div class="detailfigurka"></div> -->
+<!-- --------------------------КОЛХОЗ-ЭНД------------------------- -->
+<div class="FonFraw"></div>
+{% if request.user.is_authenticated%}
+        <form action="{% url 'Search' %}" method="get" class="searchForm">
+            
+            <input type="search" placeholder="Enter the username of the user..." class="formimput" name='user'>
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    <div class="content">
+        <p class="newuser">Users</p>
+        {%if Users%}
+                <div class="mosaicforUsers">
+                    {%for i in Users%}
+                        <div class="user">
+                            <div class="NameAndInst">
+                                <p class="username">
+                                        <a class="username" href="/users/{{i.pk}}/">{{i.username}} </a>
+                                </p>
+                                <hr>
+                                <div class="l">   
+                                    {%if i.email%}
+                                        <p class="email shadText"><i style="color: gray;">Email: </i> {{i.email}} </p>
+                                    {%endif%}
+                                    {%if i.last_login %}
+                                        <p class="shadText fs15"><i style="color: gray;">Authorized: </i>{{i.last_login}} </p>
+                                    {%endif%}
+                                    <p class="shadText fs15"><i style="color: gray;">Reg Date: </i>{{i.date_joined}} </p>
+                                </div>
+                            </div>
+                                
+                        </div>
+                    {%endfor%}
+                </div>
+            {%else%}
+            <p class="UserNotFound">
+                <span>User is not found</span><br>
+                ¯\_(ツ)_/¯
+            </p>
+            {%endif%}
+            <div class='pages'>
+                {%if is_paginated%}
+                    {%if page_obj.has_previous%}
+                        <a href="?page=1">1</a>
+                        <a class="NextPage rotate" href="?page={{page_obj.previous_page_number}}"><</a>
+                        {%endif%}
+                        <a style="background-color: rgba(255, 255, 255, 0.1);" >{{page_obj.number}}</a>        
+                    {%if page_obj.has_next%}
+                        <a class="NextPage" href="?page={{page_obj.next_page_number}}">></a>
+                        <a href="?page={{page_obj.paginator.num_pages}}">{{page_obj.paginator.num_pages}}</a>
+                    {%endif%}
+                {%endif%}
+            </div>
+    </div>    
+{%else%}
+    <div style="height: 40vh;" class="toptar"></div>
+    <div class="ContAddPost">
+        <p class="creattext">Login to see the list of users</p>
+    </div>
+    {%endif%}
+
+{%endblock%}

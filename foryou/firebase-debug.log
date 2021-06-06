@@ -1,0 +1,107 @@
+[debug] [2021-03-26T10:59:39.898Z] ----------------------------------------------------------------------
+[debug] [2021-03-26T10:59:39.900Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\basma\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-03-26T10:59:39.901Z] CLI Version:   9.8.0
+[debug] [2021-03-26T10:59:39.901Z] Platform:      win32
+[debug] [2021-03-26T10:59:39.901Z] Node Version:  v12.18.3
+[debug] [2021-03-26T10:59:39.902Z] Time:          Fri Mar 26 2021 14:59:39 GMT+0400 (GMT+04:00)
+[debug] [2021-03-26T10:59:39.902Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-03-26T10:59:39.907Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-03-26T10:59:39.908Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\basma\Desktop\Python\foryou
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2021-03-26T11:02:12.475Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2021-03-26T11:02:12.961Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2021-03-26T11:02:12.961Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project django-337d9 (Django) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2021-03-26T11:02:20.032Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-03-26T11:02:20.032Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-03-26T11:02:20.326Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Fri, 26 Mar 2021 11:02:21 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-26T11:02:20.331Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/django-337d9/services/firebasedatabase.googleapis.com  
+ 
+[debug] [2021-03-26T11:02:21.615Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 26 Mar 2021 11:02:22 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] !  database: missing required API firebasedatabase.googleapis.com. Enabling now... 
+[debug] [2021-03-26T11:02:21.619Z] >>> HTTP REQUEST POST https://serviceusage.googleapis.com/v1/projects/django-337d9/services/firebasedatabase.googleapis.com:enable  
+ 
+[debug] [2021-03-26T11:02:23.370Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 26 Mar 2021 11:02:24 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-26T11:02:33.376Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/django-337d9/services/firebasedatabase.googleapis.com  
+ 
+[debug] [2021-03-26T11:02:34.500Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 26 Mar 2021 11:02:35 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2021-03-26T11:02:34.506Z] > refreshing access token with scopes: []
+[debug] [2021-03-26T11:02:34.506Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-03-26T11:02:34.813Z] <<< HTTP RESPONSE 200 {"date":"Fri, 26 Mar 2021 11:02:35 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-26T11:02:34.821Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/django-337d9 [none]
+[debug] [2021-03-26T11:02:35.239Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/django-337d9 200
+[debug] [2021-03-26T11:02:35.239Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/django-337d9 {"projectId":"django-337d9","projectNumber":"701581622535","displayName":"Django","name":"projects/django-337d9","resources":{"hostingSite":"django-337d9","storageBucket":"django-337d9.appspot.com","locationId":"europe-west"},"state":"ACTIVE"}
+[debug] [2021-03-26T11:03:28.240Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-03-26T11:03:28.240Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-03-26T11:03:28.437Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Fri, 26 Mar 2021 11:03:29 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-26T11:03:28.442Z] >>> HTTP REQUEST POST https://firebasedatabase.googleapis.com/v1beta/projects/django-337d9/locations/europe-west1/instances?databaseId=django-337d9-default-rtdb&validateOnly=true  
+ {"type":"default_database"}
+[debug] [2021-03-26T11:03:29.225Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 26 Mar 2021 11:03:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-26T11:03:29.230Z] >>> HTTP REQUEST POST https://firebasedatabase.googleapis.com/v1beta/projects/django-337d9/locations/europe-west1/instances?databaseId=django-337d9-default-rtdb  
+ {"type":"default_database"}
+[debug] [2021-03-26T11:03:31.092Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 26 Mar 2021 11:03:32 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2021-03-26T11:04:12.759Z] >>> HTTP REQUEST GET https://django-337d9-default-rtdb.europe-west1.firebasedatabase.app/.settings/rules.json  
+ 
+[debug] [2021-03-26T11:04:13.514Z] <<< HTTP RESPONSE 200 {"server":"nginx","date":"Fri, 26 Mar 2021 11:04:14 GMT","content-type":"application/json; charset=utf-8","content-length":"161","connection":"keep-alive","access-control-allow-origin":"*","cache-control":"no-cache","strict-transport-security":"max-age=31556926; includeSubDomains; preload"}
+[debug] [2021-03-26T11:04:13.688Z] Error: EINVAL: invalid argument, mkdir 'C:\Users\basma\Desktop\Python\foryou\C:\Users\basma\Desktop\PhotoJob'
+    at Object.mkdirSync (fs.js:921:3)
+    at Object.mkdirsSync (C:\Users\basma\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\fs-extra\lib\mkdirs\mkdirs-sync.js:22:9)
+    at Object.createFileSync (C:\Users\basma\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\fs-extra\lib\ensure\file.js:31:11)
+    at Config.writeProjectFile (C:\Users\basma\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:155:8)
+    at writeDBRules (C:\Users\basma\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\database.js:27:12)
+    at Object.doSetup [as database] (C:\Users\basma\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\database.js:113:13)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async init (C:\Users\basma\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\index.js:19:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2021-03-26T11:04:40.619Z] ----------------------------------------------------------------------
+[debug] [2021-03-26T11:04:40.621Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\basma\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-03-26T11:04:40.621Z] CLI Version:   9.8.0
+[debug] [2021-03-26T11:04:40.621Z] Platform:      win32
+[debug] [2021-03-26T11:04:40.621Z] Node Version:  v12.18.3
+[debug] [2021-03-26T11:04:40.622Z] Time:          Fri Mar 26 2021 15:04:40 GMT+0400 (GMT+04:00)
+[debug] [2021-03-26T11:04:40.623Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-03-26T11:04:40.628Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-03-26T11:04:40.628Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\basma\Desktop\Python\foryou
+

@@ -1,0 +1,35 @@
+{%extends 'layout.html'%}
+{%load static%}
+{%block title%}<title>Update Post</title>{%endblock%}
+{%block content%}
+{%if post.errors%}
+    <div class="regerros"><p class="nonerrors">{{form.errors}}</p></div>
+{%endif%}
+<div class="content">
+    <p class="newuser">Update Video</p>
+    <div class="regtext">
+    </div>
+    <form class="AddInputForm" enctype="multipart/form-data" method="POST">
+        {%csrf_token%}
+        <div class="AddInputName">
+            <div><p>Heading</p></div>
+            <div class="headingUbdate">{{form.heading}}</div>
+        </div>
+        <style>
+            form textarea{
+                min-height: 150px;
+                min-width: 350px;
+            }
+        </style>
+        <div class="AddInputName">
+            <div><p>Instagram</p></div>
+            <div>{{form.instagram}}</div>
+        </div>
+        <br><br>
+
+        <div class="AddInputName AddInputNameBut"><button class="regsubmut" type="submit">Update</button></div>
+        </form>
+</div>
+    
+
+{%endblock%}

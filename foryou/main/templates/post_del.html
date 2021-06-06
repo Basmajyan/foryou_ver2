@@ -1,0 +1,22 @@
+{%extends 'layout.html'%}
+{%load static%}
+{%block title%}<title>Add Post</title>{%endblock%}
+{%block content%}
+{%if post.errors%}
+    <div class="regerros"><p class="nonerrors">{{form.errors}}</p></div>
+{%endif%}
+<div class="content">
+    <p class="newuser delp">Do you want to delete a post?</p>
+    <div class="regtext">
+    </div>
+    <form class="AddInputForm" enctype="multipart/form-data" method="POST">
+        {%csrf_token%}
+        <div class="AddInputName">
+            <a href="{%url 'PostView' object.id%}"><div class="candel"><i> Cancel</i></div></a>
+            <button class="candel" style="background-color: rgba(255, 0, 0, 0.507);" type="submit">Delete 😕</button>
+        </div>
+        </form>
+</div>
+    
+
+{%endblock%}

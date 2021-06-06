@@ -1,0 +1,122 @@
+{%extends 'layout.html'%}
+{%load static%}
+{%block title%}<title>Home</title>{%endblock%}
+
+{%block content%}
+<div class="figurka">
+    <div class="forworld"></div>
+</div>
+<div class="vectors">
+    <div class="artist"><img width="100%" src="{%static 'img/artist.png' %}"></div>
+    <div class="programmist"><img width="100%" src="{%static 'img/programmist.png' %}"></div>
+    <div class="photograper"><img width="100%" src="{%static 'img/photographer.png' %}"></div>
+</div>
+<div class="toptar"></div>
+<div class="ContAddPost">
+    {%if request.user.is_authenticated%}
+        <p style="font-weight: bold;" class="creattext">Add new post</p>
+        <div class="ToLogOrReg">
+            <a href="{%url 'AddVideo'%}">
+                <img class="videIco" src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHBhdGggZD0ibTMzOC45NSAyNDMuMjgtMTIwLTc1Yy00LjYyNS0yLjg5LTEwLjQ1My0zLjA0My0xNS4yMjItLjQtNC43NyAyLjY0My03LjcyOSA3LjY2Ny03LjcyOSAxMy4xMnYxNTBjMCA1LjQ1MyAyLjk1OSAxMC40NzYgNy43MjkgMTMuMTIgMi4yNjYgMS4yNTYgNC43NyAxLjg4IDcuMjcxIDEuODggMi43NjMgMCA1LjUyMi0uNzYzIDcuOTUtMi4yOGwxMjAtNzVjNC4zODYtMi43NDEgNy4wNS03LjU0OCA3LjA1LTEyLjcycy0yLjY2My05Ljk3OS03LjA0OS0xMi43MnptLTExMi45NSA2MC42NTZ2LTk1Ljg3M2w3Ni42OTggNDcuOTM3eiIvPjxwYXRoIGQ9Im00MzcgNjFoLTM2MmMtNDEuMzU1IDAtNzUgMzMuNjQ1LTc1IDc1djI0MGMwIDQxLjM1NSAzMy42NDUgNzUgNzUgNzVoMzYyYzQxLjM1NSAwIDc1LTMzLjY0NSA3NS03NXYtMjQwYzAtNDEuMzU1LTMzLjY0NS03NS03NS03NXptNDUgMzE1YzAgMjQuODEzLTIwLjE4NyA0NS00NSA0NWgtMzYyYy0yNC44MTMgMC00NS0yMC4xODctNDUtNDV2LTI0MGMwLTI0LjgxMyAyMC4xODctNDUgNDUtNDVoMzYyYzI0LjgxMyAwIDQ1IDIwLjE4NyA0NSA0NXoiLz48L2c+PC9zdmc+" />
+                <br><p class="addUpload">Add YouTube video!</p>
+            </a>
+            <a href="{%url 'AddPost'%}">
+                <img class="videIco" src="data:image/svg+xml;base64,PHN2ZyBpZD0iX3gzMV8iIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnPjxwYXRoIGQ9Im0xNy40NTMgMjRjLS4xNjggMC0uMzQtLjAyMS0uNTEtLjA2NmwtMTUuNDYzLTQuMTQxYy0xLjA2LS4yOTItMS42OTItMS4zOS0xLjQxNC0yLjQ1bDEuOTUxLTcuMjcyYy4wNzItLjI2Ny4zNDYtLjQyMi42MTItLjM1NC4yNjcuMDcxLjQyNS4zNDYuMzU0LjYxMmwtMS45NSA3LjI3Yy0uMTM5LjUzLjE3OSAxLjA4Mi43MSAxLjIyOWwxNS40NTcgNC4xMzljLjUzMS4xNCAxLjA3OS0uMTc2IDEuMjE3LS43MDRsLjc4MS0yLjg5NGMuMDcyLS4yNjcuMzQ2LS40MjYuNjEzLS4zNTMuMjY3LjA3Mi40MjQuMzQ3LjM1My42MTNsLS43OCAyLjg5Yy0uMjM1Ljg5LTEuMDQ1IDEuNDgxLTEuOTMxIDEuNDgxeiIvPjwvZz48Zz48cGF0aCBkPSJtMjIgMThoLTE2Yy0xLjEwMyAwLTItLjg5Ny0yLTJ2LTEyYzAtMS4xMDMuODk3LTIgMi0yaDE2YzEuMTAzIDAgMiAuODk3IDIgMnYxMmMwIDEuMTAzLS44OTcgMi0yIDJ6bS0xNi0xNWMtLjU1MSAwLTEgLjQ0OS0xIDF2MTJjMCAuNTUxLjQ0OSAxIDEgMWgxNmMuNTUxIDAgMS0uNDQ5IDEtMXYtMTJjMC0uNTUxLS40NDktMS0xLTF6Ii8+PC9nPjxnPjxwYXRoIGQ9Im05IDljLTEuMTAzIDAtMi0uODk3LTItMnMuODk3LTIgMi0yIDIgLjg5NyAyIDItLjg5NyAyLTIgMnptMC0zYy0uNTUxIDAtMSAuNDQ5LTEgMXMuNDQ5IDEgMSAxIDEtLjQ0OSAxLTEtLjQ0OS0xLTEtMXoiLz48L2c+PGc+PHBhdGggZD0ibTQuNTcgMTYuOTNjLS4xMjggMC0uMjU2LS4wNDktLjM1NC0uMTQ2LS4xOTUtLjE5NS0uMTk1LS41MTIgMC0uNzA3bDQuNzIzLTQuNzIzYy41NjYtLjU2NiAxLjU1NS0uNTY2IDIuMTIxIDBsMS40MDYgMS40MDYgMy44OTItNC42N2MuMjgzLS4zMzkuNjk5LS41MzYgMS4xNDItLjU0aC4wMTFjLjQzOCAwIC44NTMuMTkgMS4xMzkuNTIzbDUuMjMgNi4xMDJjLjE4LjIwOS4xNTYuNTI1LS4wNTQuNzA1LS4yMDkuMTgtLjUyNC4xNTctLjcwNS0uMDU0bC01LjIzLTYuMTAyYy0uMDk3LS4xMTItLjIzMS0uMTc0LS4zOC0uMTc0LS4xMDQtLjAwOS0uMjg3LjA2My0uMzg0LjE4bC00LjI0MyA1LjA5MWMtLjA5LjEwOC0uMjIxLjE3My0uMzYyLjE3OS0uMTQyLjAxLS4yNzctLjA0Ni0uMzc2LS4xNDZsLTEuNzkzLTEuNzkzYy0uMTg5LS4xODgtLjUxOC0uMTg4LS43MDcgMGwtNC43MjMgNC43MjNjLS4wOTcuMDk3LS4yMjUuMTQ2LS4zNTMuMTQ2eiIvPjwvZz48L3N2Zz4=" />
+                <br><p class="addUpload">Upload images!</p>
+
+            </a>
+        </div>
+        {%else%}
+        <p class="creattext">Register or log in to add a post</p>
+    {%endif%}
+</div>
+
+<div class="content">
+    <p class="newuser">New Posts</p>
+    <div class="mosaic">
+        
+        {%for j in Video%}
+            <div class="user">
+                <div class="NameAndInst">
+                    <p class="username">
+                        <a class="username" href="/users/{{i.authors_id}}/">{{j.url}} </a>
+                    </p>
+                    {%if not i.instagram%}
+                        <a class="instlink" target="_blank"
+                        href="https://www.instagram.com/{{i.instagram}}"><i style="color: gray;">Instagram</i> @{{i.instagram}}</a><br>
+                        <hr>
+                    {%endif%}
+                </div>
+                <a href="">
+                    <p class="instlink">{{j.heading}}</p>
+                </a>
+                <div class="img-wrapper">
+                    <a href="{{j.url}}">        
+                        <div class="clickInVideo">
+                            <p class="OpenVideo">&#160;OPEN</p>
+                        </div>
+                </a>
+                        <iframe class="YtubeVideo" src="https://www.youtube.com/embed/LPyeSKzkajI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>                
+                </div>
+                </a>
+             </div>
+        {%endfor%}
+
+
+        {%for i in post%}
+        <div class="user">
+            <div class="NameAndInst">
+                <p class="username">
+                    <a class="username" href="/users/{{i.authors_id}}/">{{i.author}} </a>
+                </p>
+                    {%if i.instagram%}
+                <a class="instlink" target="_blank"
+                href="https://www.instagram.com/{{i.instagram}}"><i style="color: gray;">Instagram</i> @{{i.instagram}}</a><br>
+                <hr>
+                {%endif%}
+            </div>
+            <p class="instlink">{{i.heading}}</p>
+            
+            {%if i.type == 'video' %}
+                <div class="img-wrapper">
+                    <a href="{% url 'PostView' i.id %}">        
+                        <div class="clickInVideo">
+                            <p class="OpenVideo">&#160;OPEN</p>
+                        </div>
+                    </a>        
+                        <iframe class="YtubeVideo" src="https://www.youtube.com/embed/{{i.url}}?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>                
+                </div>
+                </a>
+            {%else%}
+                {%if i.image%}
+                    <div class="img-wrapper">
+                        <a href="{% url 'PostView' i.id %}"><img class="postimage2" width="100%" id="" src="{{i.image.url}}" alt="404 Image is not a found"></a>
+                    </div>
+                    <!-- <div class="postimage" style="background-image: url({{i.image.url}})" ></div> -->
+                {%else%}
+                    <p class="instlink" style="text-align:center;color:red;">Image is not a found</p>
+                {%endif%}
+            {%endif%}
+            </div>
+            {%endfor%}      
+            
+
+           
+        
+    </div >
+    <div class='pages'>
+        {%if is_paginated%}
+            {%if page_obj.has_previous%}
+                <a href="?page=1">1</a>
+                <a class="NextPage rotate" href="?page={{page_obj.previous_page_number}}"><</a>
+                {%endif%}
+                <a style="background-color: rgba(255, 255, 255, 0.1);" >{{page_obj.number}}</a>        
+            {%if page_obj.has_next%}
+                <a class="NextPage" href="?page={{page_obj.next_page_number}}">></a>
+                <a href="?page={{page_obj.paginator.num_pages}}">{{page_obj.paginator.num_pages}}</a>
+            {%endif%}
+        {%endif%}
+    </div>
+</div>
+    
+{%endblock%}
